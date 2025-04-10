@@ -11,9 +11,13 @@
             padding: 0;
             overflow: hidden;
         }
-        
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         .bg-image {
-            /* Make sure the image covers the entire viewport */
             background-image: url("img/background.jpg");
             height: 100%;
             width: 100%;
@@ -21,6 +25,10 @@
             background-repeat: no-repeat;
             background-size: cover;
             position: fixed;
+            
+            /* Smooth continuous spin */
+            animation: spin 10s linear infinite;
+            transform-origin: center center;
         }
     </style>
 </head>
